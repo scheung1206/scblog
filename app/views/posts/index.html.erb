@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <% @posts.each do |post| %>
+        <div class="post_preview">
+          <h2 class="post_title"><%= link_to post.title, post %></h2>
+            <h3 class="post-subtitle"><%=post.body%></h3>
+            <p class="post_meta">Posted by <%=current_user%> on <%= post.created_at.strftime("%B, %d, %Y") %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
