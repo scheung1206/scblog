@@ -14,8 +14,8 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def create
-    #@user = current_user
-    @post = Post.new(post_params)#@user.posts.new(post_params)
+    @user = current_user
+    @post = @user.posts.new(post_params)
     if @post.save
       redirect_to @post
     else
@@ -39,7 +39,7 @@ before_action :authenticate_user!, except: [:index, :show]
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to root_path
+    redirect_to post_path
   end
 
   private
