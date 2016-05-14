@@ -1608,8 +1608,6 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  background-color: black;
-  z-index: 1000;
 }
 .row {
   margin-right: -15px;

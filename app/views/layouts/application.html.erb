@@ -15,10 +15,13 @@
   <title>Clean Blog</title>
 
   <!-- Bootstrap Core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/bootstrap.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link href="css/clean-blog.min.css" rel="stylesheet">
+  <link href="/assets/clean-blog.css" rel="stylesheet">
+
+  <link href="/assets/application.css" rel="stylesheet">
+
 
   <!-- Custom Fonts -->
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -38,47 +41,7 @@
 
       <!-- Navigation -->
       <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-          <div class="container-fluid">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header page-scroll">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" href="../">stephencheung</a>
-              </div>
-
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav navbar-right">
-                      <li>
-                          <a href="../">| Home</a>
-                      </li>
-                      <li>
-                          <a href="/welcome/about">| About</a>
-                      </li>
-                      <li>
-                          <a href="/posts">| Post</a>
-                      </li>
-                      <li>
-                          <a href="contact.html">| Contact</a>
-                      </li>
-                      <% if !user_signed_in? %>
-                      <li>
-                          <a href="/users/sign_in">| Admin Sign In</a>
-                      </li>
-                      <% else %>
-                      <li>
-                          <%= link_to "| Sign out", destroy_user_session_path, :method => :delete %>
-                      </li>
-                      <% end%>
-
-                  </ul>
-              </div>
-              <!-- /.navbar-collapse -->
-          </div>
+          <%= render 'layouts/navigation' %>
           <!-- /.container -->
       </nav>
       <!-- Page Header -->
@@ -96,9 +59,16 @@
               </div>
           </div>
       </header>
-
-<%= yield %>
-
+      <container>
+      <section>
+        <aside>
+  <%= render 'layouts/sidebar' %>
+</aside>
+  <article>
+  <%= yield %>
+</article>
+</section>
+</container>
 <footer>
     <div class="container">
         <div class="row">
@@ -145,13 +115,13 @@
 </footer>
 
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
+<script src="/assets/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="/assets/bootstrap.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="js/clean-blog.min.js"></script>
+<script src="/assets/clean-blog.min.js"></script>
 
 
 </body>
