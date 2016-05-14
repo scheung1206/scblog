@@ -11,12 +11,26 @@
           </div>
           <hr>
           <% end %>
+          <ul class="pager">
+            <li class="previous">
+                <a href="#">&larr; Previous Posts</a>
+            </li>
+              <li class="next">
+                  <a href="#">Older Posts &rarr;</a>
+              </li>
+          </ul>
         </div>
+
       </div>
     </div>
-    <% if current_user.admin? %>
-    <div class="buttons">
-      <button class="button"><%= link_to "New Post", new_post_path %></button>
-    </div>
+    <% if @user %>
+    <% if @user.admin? %>
+    <ul class="pager">
+        <li class="next">
+            <a href="#">Older Posts &rarr;</a>
+        </li>
+    </ul>
+      <% end %>
     <% end %>
 </div>
+<hr>
