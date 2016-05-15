@@ -34,8 +34,24 @@ section {
   display: flex;
 }
 aside {
-  width: 150px;
+  min-width: 30%;
+  padding-top: 35px;
+  padding-right: 35px;
+  padding-left: 35px;
 }
 article {
   flex: 1;
+}
+
+.aboutme {
+  background-color: black;
+  color: white;
+}
+
+ul {
+}
+
+li {
+list-style-type: none;
+font-family: "Montserrat", sans-serif;
 }

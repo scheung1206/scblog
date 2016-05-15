@@ -1,27 +1,27 @@
-<article>
+<div class="container">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
       <% @posts.each do |post| %>
       <a href= "posts/<%=post.id%>">
         <div class="post-preview">
           <h2 class="post-title"><%=  post.title %></h2>
-            <h3 class="post-subtitle"><%=post.body%></h3>
-          </a>
-            <p class="post-meta">Posted by <%=User.find(post.user_id).name%> on <%= post.created_at.strftime("%B, %d, %Y") %></p>
-          </div>
-          <hr>
-          <% end %>
-          <ul class="pager">
-            <li class="previous">
-                <a href="#">&larr; Previous Posts</a>
-            </li>
-              <li class="next">
-                  <a href="#">Older Posts &rarr;</a>
-              </li>
-          </ul>
-        </div>
-
+          <h3 class="post-subtitle"><%=post.body%></h3>
+        </a>
+        <p class="post-meta">Posted by <%=User.find(post.user_id).name%> on <%= post.created_at.strftime("%B, %d, %Y") %></p>
       </div>
+      <hr>
+      <% end %>
+      <ul class="pager">
+        <li class="previous">
+          <a href="#">&larr; Previous Posts</a>
+        </li>
+        <li class="next">
+          <a href="#">Older Posts &rarr;</a>
+        </li>
+      </ul>
+      <hr>
     </div>
 
-<hr></article>
+  </div>
+</div>
+</div>
