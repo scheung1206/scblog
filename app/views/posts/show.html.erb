@@ -4,6 +4,7 @@
     <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
       <div class="post-preview">
         <h1 class="post-title">
+          <% unless @post.image_url.nil? %><%= image_tag @post.image_url %><br /><% end %>
           <%= @post.title %>
         </h1>
 
