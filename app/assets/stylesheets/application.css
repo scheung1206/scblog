@@ -55,3 +55,8 @@ li {
 list-style-type: none;
 font-family: "Montserrat", sans-serif;
 }
+
+img {
+  max-width:100%;
+max-height:auto;
+}
