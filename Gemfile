@@ -30,7 +30,8 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'jquery-turbolinks'
 #gem 'masonry-rails'
-
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 gem 'devise'
 
 # Use ActiveModel has_secure_password

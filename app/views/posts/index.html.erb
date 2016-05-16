@@ -16,15 +16,10 @@
     </div>
       <% end %>
       </div>
-      <ul class="pager">
-        <li class="previous">
-          <a href="#">&larr; Previous Posts</a>
-        </li>
-        <li class="next">
-          <a href="#">Older Posts &rarr;</a>
-        </li>
-      </ul>
       <hr>
+      <div class="text-center">
+        <%= will_paginate @posts,renderer: BootstrapPagination::Rails %>
+      </div>
     </div>
 
   </div>
