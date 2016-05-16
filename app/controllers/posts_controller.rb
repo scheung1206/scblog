@@ -30,7 +30,7 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(params[:post].permit(:title,:body))
+    if @post.update(params[:post].permit(:title,:body,:image))
       redirect_to @post
     else
       render 'edit'

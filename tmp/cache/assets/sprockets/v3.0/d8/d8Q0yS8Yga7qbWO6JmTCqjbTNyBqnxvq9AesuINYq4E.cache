@@ -1,0 +1,10 @@
+I"ª(function() {
+  $('#posts').imagesLoaded()(function() {
+    return $('#posts').masonry({
+      itemSelector: '.box',
+      isFitWidth: true
+    });
+  });
+
+}).call(this);
+:ET

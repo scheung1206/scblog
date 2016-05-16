@@ -1,17 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
+      <div id="posts" class="transitions-enabled">
       <% @posts.each do |post| %>
+      <div class="box panel panel-default">
       <a href= "posts/<%=post.id%>">
         <div class="post-preview">
-          <% unless post.image_url.nil? %><%= image_tag post.image_url(:medium) %><br /><% end %>
+          <% unless post.image_url.nil? %><%= image_tag post.image_url %><br /><% end %>
+          <div class="panel-body">
           <h2 class="post-title"><%=  post.title %></h2>
-          <h3 class="post-subtitle"><%=post.body%></h3>
+          </div>
         </a>
         <p class="post-meta">Posted by <%=User.find(post.user_id).name%> on <%= post.created_at.strftime("%B, %d, %Y") %></p>
       </div>
-      <hr>
+    </div>
       <% end %>
+      </div>
       <ul class="pager">
         <li class="previous">
           <a href="#">&larr; Previous Posts</a>
