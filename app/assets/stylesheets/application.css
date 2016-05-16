@@ -41,6 +41,7 @@ aside {
 }
 article {
   flex: 1;
+  padding-top: 35px;
 }
 
 .aboutme {
