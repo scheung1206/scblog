@@ -36,15 +36,18 @@
         <div id="posts" class="transitions-enabled">
         <% @posts.each do |post| %>
         <div class="box panel panel-default">
-        <a href= "posts/<%=post.id%>">
+        <a href= "/posts/<%=post.id%>">
           <div class="post-preview">
             <div class="mediawrap">
-              <% if (!post.image_url.nil? && !post.ytlink.nil? ) %>
-            <% unless post.image_url.nil? %><%= image_tag post.image_url %><br /><% end %>
-            <%else%>
-            <% unless post.image_url.nil? %><%= image_tag post.image_url %><br /><% end %>
-          <% unless post.ytlink.nil? %>  <iframe src="https://www.youtube.com/embed/<%=post.ytlink%>" frameborder="0" ></iframe><% end %>
-          <% end %>
+              <% if !post.image_url.nil? %>
+              <% if post.image_url.include? "video" %>
+              <video width= 300px height= 161px controls="true"><source src="<%=post.image_url%>" type="video/mp4"/></video><br />
+                <% elsif post.image_url.include? "image" %>
+                <%= image_tag post.image_url %><br />
+                  <% end %>
+                  <%elsif%>
+                <% unless post.ytlink.nil? %>  <iframe src="https://www.youtube.com/embed/<%=post.ytlink%>" frameborder="0" allowfullscreen></iframe><% end %>
+                <% end %>
         </div>
             <div class="panel-body">
             <h2 class="post-title"><%=  post.title %></h2>

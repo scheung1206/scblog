@@ -3,9 +3,15 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
       <div class="post-preview">
-          <% unless @post.image_url.nil? %><%= image_tag @post.image_url %><br /><% end %>
+          <% unless @post.image_url.nil? %>
+          <% if @post.image_url.include? "video" %>
+            <video controls="true" width="640" height="360"><source src="<%=@post.image_url%>" type="video/mp4"/></video><br />
+            <% elsif @post.image_url.include? "image" %>
+            <%= image_tag @post.image_url %><br />
+              <% end %>
+              <%end%>
           <br>
-            <% unless @post.ytlink.nil? %>  <iframe  width="640" height="360" src="https://www.youtube.com/embed/<%=@post.ytlink%>" frameborder="0" ></iframe><% end %>
+            <% unless @post.ytlink.nil? %>  <iframe  width="640" height="360" src="https://www.youtube.com/embed/<%=@post.ytlink%>" frameborder="0" allowfullscreen></iframe><% end %>
         <h1 class="post-title">
           <%= @post.title %>
         </h1>
