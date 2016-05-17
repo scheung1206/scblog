@@ -36,7 +36,6 @@
         <div id="posts" class="transitions-enabled">
         <% @posts.each do |post| %>
         <div class="box panel panel-default">
-        <a href= "/posts/<%=post.id%>">
           <div class="post-preview">
             <div class="mediawrap">
               <% if !post.image_url.nil? %>
@@ -49,6 +48,7 @@
                 <% unless post.ytlink.nil? %>  <iframe src="https://www.youtube.com/embed/<%=post.ytlink%>" frameborder="0" allowfullscreen></iframe><% end %>
                 <% end %>
         </div>
+        <a href= "/posts/<%=post.id%>">
             <div class="panel-body">
             <h2 class="post-title"><%=  post.title %></h2>
             </div>
