@@ -31,7 +31,7 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(params[:post].permit(:title,:body,:image))
+    if @post.update(params[:post].permit(:title,:body,:image, :ytlink))
       redirect_to @post
     else
       render 'edit'
@@ -47,6 +47,6 @@ before_action :authenticate_user!, except: [:index, :show]
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :image)
+    params.require(:post).permit(:title, :body, :image, :ytlink)
   end
 end

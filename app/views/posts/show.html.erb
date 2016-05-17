@@ -4,6 +4,8 @@
     <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
       <div class="post-preview">
           <% unless @post.image_url.nil? %><%= image_tag @post.image_url %><br /><% end %>
+          <br>
+            <% unless @post.ytlink.nil? %>  <iframe  width="640" height="360" src="http://www.youtube.com/embed/<%=@post.ytlink%>" frameborder="0" ></iframe><% end %>
         <h1 class="post-title">
           <%= @post.title %>
         </h1>

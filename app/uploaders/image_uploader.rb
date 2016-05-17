@@ -8,4 +8,6 @@ class ImageUploader < CarrierWave::Uploader::Base
       process :eager => true
       process :resize_to_fill => [300,300]
     end
+
+    
 end

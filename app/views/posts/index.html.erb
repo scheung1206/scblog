@@ -6,7 +6,14 @@
       <div class="box panel panel-default">
       <a href= "posts/<%=post.id%>">
         <div class="post-preview">
+          <div class="mediawrap">
+            <% if (!post.image_url.nil? && !post.ytlink.nil? ) %>
           <% unless post.image_url.nil? %><%= image_tag post.image_url %><br /><% end %>
+          <%else%>
+          <% unless post.image_url.nil? %><%= image_tag post.image_url %><br /><% end %>
+        <% unless post.ytlink.nil? %>  <iframe src="http://www.youtube.com/embed/<%=post.ytlink%>" frameborder="0" ></iframe><% end %>
+        <% end %>
+        </div>
           <div class="panel-body">
           <h2 class="post-title"><%=  post.title %></h2>
           </div>

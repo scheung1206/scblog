@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 #image uploading
 gem 'carrierwave'
+gem 'youtube_addy'
 gem 'cloudinary'
 gem 'jquery-turbolinks'
 #gem 'masonry-rails'

@@ -17,8 +17,13 @@
 <%= f.label :body %> <br>
 <%= f.text_area :body %>
 </p>
-<legend>Avatar</legend>
+<legend>Image</legend>
+<%= f.hidden_field :image_cache %>
 <%= f.file_field :image %><br>
+<p>
+  <legend>YouTube Link</legend>
+  <%= f.text_field :ytlink %>
+</p>
 <p>
   <%= f.submit %>
 </p>
