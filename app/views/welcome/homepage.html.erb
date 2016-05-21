@@ -34,38 +34,58 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
         <div id="posts" class="transitions-enabled">
-        <% @posts.each do |post| %>
+        <% @news.each do |newd| %>
+        <% if newd.is_a?(Post) %>
         <div class="box panel panel-default">
           <div class="post-preview">
             <div class="mediawrap">
-              <% if !post.image_url.nil? %>
-              <% if post.image_url.include? "video" %>
-              <video width= 300px height= 161px controls="true"><source src="<%=post.image_url%>" type="video/mp4"/></video><br />
-                <% elsif post.image_url.include? "image" %>
-                <%= image_tag post.image_url %><br />
+              <% if !newd.image_url.nil? %>
+              <% if newd.image_url.include? "video" %>
+              <video width= 300px height= 161px controls="true"><source src="<%=newd.image_url%>" type="video/mp4"/></video><br />
+                <% elsif newd.image_url.include? "image" %>
+                <%= image_tag newd.image_url %><br />
                   <% end %>
                   <%elsif%>
-                <% unless post.ytlink.nil? %>  <iframe src="https://www.youtube.com/embed/<%=post.ytlink%>" frameborder="0" allowfullscreen></iframe><% end %>
+                <% unless newd.ytlink.nil? %>  <iframe src="https://www.youtube.com/embed/<%=newd.ytlink%>" frameborder="0" allowfullscreen></iframe><% end %>
                 <% end %>
-        </div>
-        <a href= "/posts/<%=post.id%>">
+            </div>
+            <a href= "/posts/<%=newd.id%>">
             <div class="panel-body">
-            <h2 class="post-title"><%=  post.title %></h2>
+              <h5> Blog Post </h5>
+            <h2 class="post-title"><%=  newd.title %></h2>
             </div>
           </a>
-          <p class="post-meta">Posted by <%=User.find(post.user_id).name%> on <%= post.created_at.strftime("%B, %d, %Y") %></p>
+          <p class="post-meta">Posted by <%=User.find(newd.user_id).name%> on <%= newd.created_at.strftime("%B, %d, %Y") %></p>
         </div>
-      </div>
+        </div>
+        <% elsif newd.is_a?(Review) %>
+        <div class="box panel panel-default">
+          <div class="post-preview">
+            <div class="mediawrap">
+              <% unless newd.image_url.nil? %>
+              <%= image_tag newd.image_url %><br />
+                  <% end %>
+            </div>
+            <a href= "/reviews/<%=newd.id%>">
+            <div class="panel-body">
+              <h5> Show Review </h5>
+            <h2 class="post-title"><%=  newd.showname %></h2>
+            </div>
+          </a>
+          <p class="post-meta">Posted by <%=User.find(newd.user_id).name%> on <%= newd.created_at.strftime("%B, %d, %Y") %></p>
+        </div>
+        </div>
+
+          <% end %>
         <% end %>
         </div>
         <hr>
-      <div class="text-center">
-          <%= will_paginate @posts,renderer: BootstrapPagination::Rails %>
+        <div class="text-center">
+          <%= will_paginate @news,renderer: BootstrapPagination::Rails %>
         </div>
       </div>
 
     </div>
-  </div>
   </div>
 
 

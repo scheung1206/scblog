@@ -63,6 +63,10 @@ class ReviewsController < ApplicationController
       format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
       format.json { head :no_content }
     end
+
+    def sortable_date
+      created_at.to_datetime
+    end
   end
 
   private

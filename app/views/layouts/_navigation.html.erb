@@ -33,12 +33,14 @@
                 <a href="/users/sign_in">| Admin Sign In</a>
             </li>
             <% else %>
+            <% if current_user.admin? %>
             <li>
                 <%= link_to "| New Post", new_post_path %>
             </li>
             <li>
                 <%= link_to "| New Review", new_review_path %>
             </li>
+            <% end %>
             <li>
                 <%= link_to "| Sign out", destroy_user_session_path, :method => :delete %>
             </li>

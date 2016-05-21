@@ -44,6 +44,9 @@ before_action :authenticate_user!, except: [:index, :show]
     redirect_to posts_path
   end
 
+  def sortable_date
+    created_at.to_datetime
+  end 
   private
 
   def post_params
