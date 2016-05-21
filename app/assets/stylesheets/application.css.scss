@@ -14,6 +14,15 @@
   *= require_tree .
   *= require_self
   */
+  aside {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .containershow {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   html, body {
   margin: 0;
   height: 100%;
@@ -28,20 +37,36 @@
     margin-left: auto;
     background-color: black;
   }
+  @media only screen and (min-width: 770px) {
+h2 {
+  font-size: 80px;
+}
 
 section {
   flex: 1;
   display: flex;
 }
 aside {
-  min-width: 30%;
+  width: 300px;
+  float: left;
   padding-top: 35px;
   padding-right: 35px;
   padding-left: 35px;
 }
 article {
+  width: 740px;
   flex: 1;
+  float: right;
   padding-top: 35px;
+  padding-left: 35px;
+}
+#maincontainer {
+  width: 1080px;
+  margin: 0 auto;
+}
+.containershow {
+  padding-left: 0px;
+}
 }
 
 .aboutme {
@@ -70,4 +95,8 @@ max-height:auto;
 img.resize {
   width:300px;
   height:auto;
+}
+
+.container {
+  padding-left: 0px;
 }

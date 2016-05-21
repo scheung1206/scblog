@@ -46,12 +46,12 @@
       </nav>
       <!-- Page Header -->
       <!-- Set your background image for this header on the line below. -->
-      <header class="intro-header" style="background-image: url('/assets/about-bg.jpg')">
+      <header class="intro-header" style="background-image: url('/assets/598495.jpg')">
           <div class="container">
               <div class="row">
                   <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                       <div class="site-heading">
-                          <h1>stephencheung</h1>
+                          <h2>stephencheung</h2>
                           <hr class="small">
                           <span class="subheading">Stephen Cheung</span>
                       </div>
@@ -59,15 +59,13 @@
               </div>
           </div>
       </header>
-      <container>
-      <section>
-        <aside>
-  <%= render 'layouts/sidebar' %>
-</aside>
+      <container id="maincontainer">
   <article>
   <%= yield %>
 </article>
-</section>
+<aside>
+<%= render 'layouts/sidebar' %>
+</aside>
 </container>
 <footer>
   <%= render 'layouts/footer' %>
