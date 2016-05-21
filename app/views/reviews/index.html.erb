@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
+      <div id="posts" class="transitions-enabled">
+      <% @reviews.each do |review| %>
+      <div class="box panel panel-default">
+        <div class="post-preview">
+          <div class="mediawrap">
+            <% unless review.image_url.nil? %>
+            <%= image_tag review.image_url %><br />
+                <% end %>
+          </div>
+          <a href= "reviews/<%=review.id%>">
+          <div class="panel-body">
+          <h2 class="post-title"><%=  review.showname %></h2>
+          </div>
+        </a>
+        <p class="post-meta">Posted by <%=User.find(review.user_id).name%> on <%= review.created_at.strftime("%B, %d, %Y") %></p>
+      </div>
+    </div>
+      <% end %>
+      </div>
+      <hr>
+      <div class="text-center">
+        <%= will_paginate @reviews,renderer: BootstrapPagination::Rails %>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>

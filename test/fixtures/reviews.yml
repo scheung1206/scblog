@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  showname: 
+  image: 
+  rating: 
+  year: 
+  number_ep: 1
+
+two:
+  showname: 
+  image: 
+  rating: 
+  year: 
+  number_ep: 1

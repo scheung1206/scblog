@@ -1,0 +1,36 @@
+<%= form_for @review do |f| %>
+<% if @review.errors.any? %>
+<div id="errors">
+  <h2><%= pluralize(@review.errors.count,"error")%> prevented this post from saving</h2>
+  <ul>
+    <% @review.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <%end%>
+  </ul>
+</div>
+<%end%>
+<p>
+<%= f.label :Show %> <br>
+<%= f.text_field :showname %>
+</p>
+<p>
+<%= f.label :Image %> <br>
+<%= f.file_field :image %>
+</p>
+<p>
+<%= f.label :Year %> <br>
+<%= f.text_field :year %>
+</p>
+<p>
+<%= f.label :Episodes %> <br>
+<%= f.number_field :number_ep %>
+</p>
+<p>
+<%= f.label :Rating %> <br>
+<%= f.number_field :rating %>
+</p>
+
+
+    <%= f.button :submit %>
+
+<% end %>
