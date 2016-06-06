@@ -14,7 +14,11 @@
   *= require_tree .
   *= require_self
   */
+  article {
+    width:inherit;
+  }
   aside {
+    width: inherit;
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -37,7 +41,7 @@
     margin-left: auto;
     background-color: black;
   }
-  @media only screen and (min-width: 770px) {
+  @media only screen and (min-width: 1025px) {
 h2 {
   font-size: 80px;
 }
