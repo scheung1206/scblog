@@ -46,7 +46,7 @@ before_action :authenticate_user!, except: [:index, :show]
 
   def sortable_date
     created_at.to_datetime
-  end 
+  end
   private
 
   def post_params

@@ -1,26 +1,38 @@
-<div class="container">
+<div class="reviewcontainer">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <div id="posts" class="transitions-enabled">
+<table>
+  <tr>
+    <th> Show Title</th>
+    <th></th>
+    <th> Review </th>
+    <th> # of Episodes </th>
+    <th> Rating <th>
+  </tr>
       <% @reviews.each do |review| %>
-      <div class="box panel panel-default">
-        <div class="post-preview">
-          <div class="mediawrap">
+      <tr>
+          <td class="reviewwrap">
             <% unless review.image_url.nil? %>
-            <%= image_tag review.image_url %><br />
+            <%= image_tag review.image_url %>
                 <% end %>
-          </div>
+                </td>
+                <td>
           <a href= "reviews/<%=review.id%>">
-          <div class="panel-body">
-            <h5> Show Review </h5>
-          <h2 class="post-title"><%=  review.showname %></h2>
-          </div>
-        </a>
-        <p class="post-meta">Posted by <%=User.find(review.user_id).name%> on <%= review.created_at.strftime("%B, %d, %Y") %></p>
-      </div>
-    </div>
+          <h5 class="reviewelement"><%=  review.showname %></h5>
+          </a>
+        </td>
+        <td>
+          <h5 class="reviewelement"><%=  "FILL" %></h5>
+        </td>
+        <td>
+            <h5 class="reviewelement"><%=  review.number_ep %></h5>
+        </td>
+        <td>
+            <h5 class="reviewelement"><%=  review.rating %>/10</h5>
+        </td>
+      </tr>
       <% end %>
-      </div>
+    </table>
       <hr>
       <div class="text-center">
         <%= will_paginate @reviews,renderer: BootstrapPagination::Rails %>
