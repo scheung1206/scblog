@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160521021747) do
+ActiveRecord::Schema.define(version: 20160616002501) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "name"
@@ -34,16 +34,8 @@ ActiveRecord::Schema.define(version: 20160521021747) do
     t.string   "ytlink"
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.string   "showname"
-    t.string   "image"
-    t.integer  "rating"
-    t.integer  "year"
-    t.integer  "number_ep"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-  end
+# Could not dump table "reviews" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

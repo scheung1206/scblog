@@ -23,7 +23,7 @@
             <%=  post.title %></h2>
           </div>
         </a>
-        <p class="post-meta">Posted by <%=User.find(post.user_id).name%> on <%= post.created_at.strftime("%B, %d, %Y") %></p>
+        <h5 class="post-title">Posted by <%=User.find(post.user_id).name%> on <%= post.created_at.strftime("%B, %d, %Y") %></h5>
       </div>
     </div>
       <% end %>

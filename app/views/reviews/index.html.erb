@@ -1,44 +1,46 @@
 <div class="reviewcontainer">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-<table>
-  <tr>
-    <th> Show Title</th>
-    <th></th>
-    <th> Review </th>
-    <th> # of Episodes </th>
-    <th> Rating <th>
-  </tr>
-      <% @reviews.each do |review| %>
-      <tr>
-          <td class="reviewwrap">
-            <% unless review.image_url.nil? %>
-            <%= image_tag review.image_url %>
-                <% end %>
-                </td>
-                <td>
-          <a href= "reviews/<%=review.id%>">
-          <h5 class="reviewelement"><%=  review.showname %></h5>
-          </a>
-        </td>
-        <td>
-          <h5 class="reviewelement"><%=  "FILL" %></h5>
-        </td>
-        <td>
-            <h5 class="reviewelement"><%=  review.number_ep %></h5>
-        </td>
-        <td>
-            <h5 class="reviewelement"><%=  review.rating %>/10</h5>
-        </td>
-      </tr>
-      <% end %>
-    </table>
-      <hr>
-      <div class="text-center">
-        <%= will_paginate @reviews,renderer: BootstrapPagination::Rails %>
-      </div>
-    </div>
+      <table>
+        <tr>
+          <th> Show</th>
+          <th></th>
+          <th> Year </th>
+          <th> Review </th>
+          <th> # of Episodes </th>
+          <th> Rating <th>
+          </tr>
+          <% @reviews.each do |review| %>
+          <tr>
+            <td class="reviewwrap">
+              <% unless review.image_url.nil? %>
+              <%= image_tag review.image_url %>
+              <% end %>
+            </td>
+            <td>
+              <a href= "reviews/<%=review.id%>">
+                <h5 class="reviewelement"><%=  review.showname %></h5>
+              </a>
+            </td>
+            <td>
+                <h5 class="reviewelement"><%= review.year %></h5>
+            </td>
+            <td>
+              <h5 class="reviewelement"><%=  review.review %></h5>
+            </td>
+            <td>
+              <h5 class="reviewelement"><%=  review.number_ep %></h5>
+            </td>
+            <td>
+              <h5 class="reviewelement"><%=  review.rating %>/10</h5>
+            </td>
+          </tr>
+          <% end %>
+        </table>
+        <hr>
 
+      </div>
+
+    </div>
   </div>
-</div>
 </div>

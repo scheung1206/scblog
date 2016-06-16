@@ -1,13 +1,12 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_filter :check_if_admin, except: [:index, :show]
 
   # GET /reviews
   # GET /reviews.json
   def index
     @user = current_user
     @reviews = Review.all.order('created_at DESC')
-    @reviews = @reviews.paginate(:page => params[:page], :per_page => 6)
   end
 
   # GET /reviews/1
@@ -77,6 +76,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:showname, :image, :rating, :year, :number_ep)
+      params.require(:review).permit(:showname, :image, :rating, :year,:review, :number_ep)
     end
 end

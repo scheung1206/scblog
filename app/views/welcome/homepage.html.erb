@@ -55,7 +55,7 @@
             <h2 class="post-title"><%=  newd.title %></h2>
             </div>
           </a>
-          <p class="post-meta">Posted by <%=User.find(newd.user_id).name%> on <%= newd.created_at.strftime("%B, %d, %Y") %></p>
+          <h5 class="post-title">Posted by <%=User.find(newd.user_id).name%> on <%= newd.created_at.strftime("%B, %d, %Y") %></h5>
         </div>
         </div>
         <% elsif newd.is_a?(Review) %>
@@ -72,7 +72,7 @@
             <h2 class="post-title"><%=  newd.showname %></h2>
             </div>
           </a>
-          <p class="post-meta">Posted by <%=User.find(newd.user_id).name%> on <%= newd.created_at.strftime("%B, %d, %Y") %></p>
+          <h5 class="post-title">Posted by <%=User.find(newd.user_id).name%> on <%= newd.created_at.strftime("%B, %d, %Y") %></h5>
         </div>
         </div>
 
