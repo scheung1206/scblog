@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
   # GET /reviews.json
   def index
     @user = current_user
-    @reviews = Review.all.order('created_at DESC')
+    @reviews = Review.all.order('showname')
   end
 
   # GET /reviews/1
