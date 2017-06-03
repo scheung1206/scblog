@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.1'
+gem 'rails', '5.0.2'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3', group: [:development, :test]
 # gems required by Heroku
@@ -34,6 +34,7 @@ gem 'jquery-turbolinks'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'devise'
+gem 'json', github: 'flori/json', branch: 'v1.8'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
